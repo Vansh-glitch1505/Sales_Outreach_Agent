@@ -38,11 +38,11 @@ def run_agent(csv_file, sender_company, sender_role):
     )
 
     outbox_df = pd.DataFrame(data["outbox"])[
-        ["company_name", "contact_name", "email", "subject", "body"]
+        ["contact_name", "email", "subject", "body"]
     ] if data["outbox"] else pd.DataFrame(columns=["company_name", "contact_name", "email", "subject", "body"])
 
     flagged_df = pd.DataFrame(data["flagged_leads"])[
-        ["company_name", "contact_name", "email", "revisions"]
+        ["contact_name", "email", "revisions"]
     ] if data["flagged_leads"] else pd.DataFrame(columns=["company_name", "contact_name", "email", "revisions"])
 
     return summary, outbox_df, flagged_df
