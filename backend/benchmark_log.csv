@@ -1,0 +1,7 @@
+contact_name,status,revisions,first_pass_approval,avg_check_score,spam_score,personalization_score,tone_score,time_seconds
+Rohan Mehta,approved,0,True,83.3,80,80,90,17.15
+Priya Sharma,approved,0,True,83.3,90,70,90,18.13
+Arjun Nair,approved,0,True,84,85,75,92,75.98
+Neha Patel,approved,0,True,80,75,75,90,23.65
+Aditya Kapoor,approved,1,False,90,95,85,90,33.69
+Ankit Verma,flagged,2,False,73.3,85,55,80,63.69

@@ -59,7 +59,7 @@ def main():
               f"(revisions={row['revisions']}, {row['time_seconds']}s)")
 
     # ---- write per-lead CSV log ----
-    with open("benchmark_log.csv", "w", newline="") as f:
+    with open("benchmark_log_batch1.csv", "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=LOG_ROWS[0].keys())
         writer.writeheader()
         writer.writerows(LOG_ROWS)
@@ -92,10 +92,10 @@ How to cite these on your resume (example):
 cycles per email before approval."
 """
     print(summary)
-    with open("benchmark_summary.txt", "w") as f:
+    with open("benchmark_summary_batch1.txt", "w") as f:
         f.write(summary)
 
-    print("Wrote benchmark_log.csv and benchmark_summary.txt")
+    print("Wrote benchmark_log_batch1.csv and benchmark_summary_batch1.txt")
 
 
 if __name__ == "__main__":
