@@ -1,16 +1,15 @@
-
-BENCHMARK SUMMARY  (n = 6 leads, from ../synthetic_leads.csv)
-=========================================================
-Approval rate:              5/6  (83.3%)
-Flagged rate:                1/6  (16.7%)
-First-pass approval rate:   4/6  (66.7%)
+BENCHMARK SUMMARY  (n = 10 leads, from ../synthetic_leads.csv)
+==========================================================
+Approval rate:              8/10  (80.0%)
+Flagged rate:               2/10  (20.0%)
+First-pass approval rate:   7/10  (70.0%)
 Avg. revision cycles/lead:  0.50
 Avg. quality-check score:   82.3/100
 Avg. time per lead:         38.71s
-Total time for batch:       232.29s (3.87 min)
-=========================================================
+Total time for batch:       387.10s (6.45 min)
+==========================================================
 
-How to cite these on your resume (example):
-"Achieved a 67% first-pass approval rate across a
-6-lead test batch, with an average of 0.5 revision
-cycles per email before approval."
+How to cite these on your resume:
+"Achieved an 80% approval rate and 70% first-pass
+approval rate across a 10-lead benchmark batch, with
+an average of 0.5 revision cycles per lead before approval."
