@@ -21,23 +21,7 @@ The result: an **outbox** of approved, ready-to-send emails and a **flagged** li
 
 ## 🧠 Architecture
 
-```
-        ┌───────────┐
-        │  research │  ← Gemini + web_search / fetch_website tools
-        └─────┬─────┘
-              ▼
-        ┌───────────┐
-   ┌───▶│ copywriter │  ← Gemini drafts SUBJECT + BODY
-   │    └─────┬─────┘
-   │          ▼
-   │    ┌───────────┐
-   │    │   checks   │  ← Groq: spam / personalization / tone (0–100 each)
-   │    └─────┬─────┘
-   │          ▼
-   │    ┌───────────┐
-   └────│ score_gate │──▶ approved / flagged
-        └───────────┘
-```
+![](https://github.com/Vansh-glitch1505/Sales_Outreach_Agent/blob/main/architecture.svg)
 
 Implemented as a **LangGraph `StateGraph`** with a revise-loop: failed checks route feedback straight back into the `copywriter` node, capped at `MAX_REVISIONS` before the lead is flagged instead of looping forever.
 
@@ -125,16 +109,6 @@ A `synthetic_leads.csv` sample is included to try the pipeline immediately.
 
 ---
 
-## 🔌 API Endpoints
-
-| Endpoint | Method | Description |
-|---|---|---|
-| `/generate-emails` | POST | Run the full pipeline synchronously, returns outbox + flagged leads |
-| `/generate-emails/stream` | POST | Same pipeline, streamed via Server-Sent Events (live per-lead stage updates) |
-| `/outbox` | GET | Retrieve all approved emails generated so far |
-| `/health` | GET | Health check |
-
----
 
 ## 🎯 Quality Gates
 
